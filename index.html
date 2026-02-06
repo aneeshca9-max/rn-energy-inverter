@@ -1,81 +1,145 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="ml">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RN Energy Inverter</title>
+<title>RN Energy - Single Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
-  background: #000;
+  padding: 0;
+  background-color: #020a1c; /* Dark Navy Blue matching your image */
   font-family: "Noto Sans Malayalam", sans-serif;
+  color: white;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding-bottom: 60px; /* താഴെയുള്ള ബട്ടൺ മറയ്ക്കാതിരിക്കാൻ */
+  min-height: 100vh;
 }
 
 .container {
   width: 100%;
-  max-width: 400px;
-  height: 100vh;
-  background: linear-gradient(180deg, #000428, #004e92);
-  color: #fff;
-  text-align: center;
+  max-width: 420px;
+  background: linear-gradient(180deg, #020a1c 0%, #051e3e 100%);
   padding: 20px;
   box-sizing: border-box;
-  overflow-y: auto; /* സ്ക്രോൾ ചെയ്യാൻ */
-}
-
-h1 { font-size: 24px; color: #fff; margin-bottom: 10px; }
-h2 { font-size: 18px; color: #ffcc00; margin-bottom: 20px; }
-
-.text { font-size: 16px; line-height: 1.6; margin-bottom: 20px; }
-.highlight { color: #00ff99; font-weight: bold; }
-
-.features {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  text-align: left;
-  display: inline-block;
-}
-
-.brand-name {
-  font-size: 28px;
-  font-weight: 900;
-  color: #ffd700;
-  text-transform: uppercase;
-  margin-top: 30px;
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-
-/* ഇതാണ് നിങ്ങൾ ചോദിച്ച ആ സ്പെഷ്യൽ പച്ച ബാർ */
-.whatsapp-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #25D366; /* WhatsApp Green */
-  color: white;
-  padding: 15px 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Headings */
+h1 {
+  font-size: 22px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 18px;
+  color: #ffcc00; /* Yellow text */
+  margin: 5px 0 15px 0;
+  font-weight: 600;
+}
+
+/* The Value Prop Box */
+.highlight-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 15px;
+}
+
+.green-text {
+  color: #00ff99; /* Bright Green */
   font-weight: bold;
   font-size: 18px;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
-  z-index: 999;
+  display: block;
+  margin-bottom: 8px;
 }
 
-.whatsapp-bar:hover {
-  background-color: #128C7E;
+.desc {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #e0e0e0;
+}
+
+/* Features List (Checkbox style) */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 40px; /* Center alignment adjustment */
+}
+
+.feature-item {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.check {
+  color: #00ff99;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* Target Audience Section */
+.audience-box {
+  margin-bottom: 20px;
+}
+
+.audience-title {
+  color: #aab8c2;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.audience-list {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #81d4fa; /* Light Blue for list */
+  font-weight: 600;
+}
+
+/* Footer Promise */
+.promise {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 20px;
+  padding: 10px;
+  background: rgba(0, 255, 153, 0.1);
+  border-radius: 8px;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  background-color: #25D366;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  transition: transform 0.2s;
+}
+
+.whatsapp-btn:active {
+  transform: scale(0.98);
 }
 
 </style>
@@ -84,33 +148,45 @@ h2 { font-size: 18px; color: #ffcc00; margin-bottom: 20px; }
 <body>
 
 <div class="container">
-  <h1> രാത്രിയും പകലും വൈദ്യുതി ഇല്ലാത്തതുകൊണ്ട് 
-  കൊണ്ട് ബുദ്ധിമുട്ടുന്നവർ ആണോ  നിങ്ങൾ?</h1>
-  <h2>വെളിച്ചമില്ലാതെ ബുദ്ധിമുട്ടുന്നുണ്ടോ?</h2>
+  
+  <div>
+    <h1>രാത്രിയും പകലും വൈദ്യുതി ഇല്ലാത്തതുകൊണ്ട് ബുദ്ധിമുട്ടുന്നവർ ആണോ നിങ്ങൾ?</h1>
+    <h2>വെളിച്ചമില്ലാതെ ബുദ്ധിമുട്ടുന്നുണ്ടോ?</h2>
+  </div>
 
-  <div class="text">
-    💡 <span class="highlight">പതിനായിരങ്ങൾ മുടക്കേണ്ടതില്ല</span><br>
-    ദീർഘകാലം നിലനിൽക്കുന്ന LFpo ബാറ്ററി ഉപയോഗിച്ച് നിർമ്മിക്കുന്ന ഒരു ഇൻവെർട്ടർ മതി 
+  <div class="highlight-box">
+    <span class="green-text">💡 പതിനായിരങ്ങൾ മുടക്കേണ്ടതില്ല!</span>
+    <p class="desc">
+      ദീർഘകാലം നിലനിൽക്കുന്ന LiFePO4 ബാറ്ററി ഉപയോഗിച്ച് നിർമ്മിക്കുന്ന ഒരു ഇൻവെർട്ടർ മതി.
+    </p>
   </div>
 
   <div class="features">
-    ✅ ലൈറ്റ് & ഫാൻ<br>
-    ✅ Wi-Fi Router (No Cut)<br>
-    ✅ CCTV Camera (24x7)
+    <div class="feature-item"><span class="check">✅</span> ലൈറ്റ് & ഫാൻ</div>
+    <div class="feature-item"><span class="check">✅</span> Wi-Fi Router (No Cut)</div>
+    <div class="feature-item"><span class="check">✅</span> CCTV Camera (24x7)</div>
   </div>
 
-  <div class="text highlight">
-    🛠️ ഒന്നോ രണ്ടോ കടമുറിയുള്ളവർ, ചെറിയ ഓഫീസ് മുറികൾ, തട്ടുകട, മീൻ തട്ട്, പച്ചക്കറി കട, ഫ്രൂട്ട്സ് കട, ചെമ്മീൻ കെട്ട്<br> ഇൻവെർട്ടർ, ബാറ്ററി, സോളാർ, എന്നിവ ആവശ്യവും ബഡ്ജറ്റും അനുസരിച്ച് ചെയ്തു നൽകുന്നു 
+  <div class="audience-box">
+    <span class="audience-title">🛠️ ആർക്കൊക്കെ ഉപയോഗിക്കാം?</span>
+    <div class="audience-list">
+      കടമുറിയുള്ളവർ • ചെറിയ ഓഫിസുകൾ <br>
+      തട്ടുകട • മീൻ തട്ട് • പച്ചക്കറി കട <br>
+      ഫ്രൂട്ട്സ് കട • ചെമ്മീൻ കെട്ട്
+    </div>
   </div>
 
-  <div class="brand-name">RN ENERGY</div>
-  <p style="color: #aaa; font-size: 12px;">Smart Power Solutions</p>
-  <br><br><br> </div>
+  <div class="promise">
+    ഇൻവെർട്ടർ, ബാറ്ററി, സോളാർ എന്നിവ ആവശ്യവും ബജറ്റും അനുസരിച്ച് ചെയ്തു നൽകുന്നു.
+  </div>
 
-<a href="https://wa.me/918921097229" class="whatsapp-bar">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="24" height="24" style="filter: brightness(0) invert(1);">
-  Chat on WhatsApp
-</a>
+  <a href="https://wa.me/918921097229" class="whatsapp-btn">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.592 2.654-.696c1.025.578 2.035.887 3.092.887h.003c3.21 0 5.823-2.613 5.823-5.822 0-3.21-2.613-5.814-5.823-5.814zm0-2.25c4.418 0 8.019 3.601 8.019 8.019S16.449 20 12.03 20c-1.353 0-2.637-.34-3.768-.934l-4.262 1.118 1.139-4.148C4.516 14.868 4.013 13.5 4.013 12.021c0-4.418 3.602-8.019 8.018-8.019z"/></svg>
+    Chat on WhatsApp
+  </a>
+
+</div>
 
 </body>
 </html>
+
